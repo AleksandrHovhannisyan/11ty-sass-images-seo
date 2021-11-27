@@ -20,7 +20,7 @@ This starter template does not:
 - Include any extraneous plugins.
 - Get in your way.
 
-Most of this template serves as the foundation for [my personal website](https://github.com/AleksandrHovhannisyan/aleksandrhovhannisyan.com). No rights are reserved for this template; you are free to reuse everything that you see here.
+Most of this template serves as the foundation for [my personal website](https://github.com/AleksandrHovhannisyan/aleksandrhovhannisyan.com).
 
 ## Table of Contents
 
