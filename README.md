@@ -7,6 +7,7 @@ This is an opinionated starter for [11ty](https://github.com/11ty/eleventy) that
 - Basic image optimization using the official [`@11ty/eleventy-img`](https://github.com/11ty/eleventy-img) plugin.
 - Sass, including dedicated partials for breakpoints, mixins, functions, and CSS resets.
 - Basic SEO enhancements: essential meta tags and a programmatically generated `sitemap.xml` and `robots.txt`.
+- Auto-generated favicon link tags from a single source image.
 - Global configuration files (pre-commit/checkout hooks, line ending normalization, linters).
 - VS Code workspace settings and recommended extensions.
 
@@ -40,6 +41,7 @@ Most of this template serves as the foundation for [my personal website](https:/
 The following tasks are **required**:
 
 - [ ] Fill out [`src/_data/site.js`](./src/_data/site.js) with your site's metadata and URL.
+- [ ] Replace the favicon in [`src/assets/images/favicon`](./src/assets/images/favicon/) with your site's favicon.
 
 **Optionally**, you may also want to customize:
 

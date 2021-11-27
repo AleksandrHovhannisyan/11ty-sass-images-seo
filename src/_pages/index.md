@@ -11,6 +11,7 @@ This is an opinionated starter for [11ty](https://github.com/11ty/eleventy) that
 - Basic image optimization using the official `@11ty/eleventy-img` plugin.
 - Sass, including dedicated partials for breakpoints, mixins, functions, and CSS resets.
 - Basic SEO enhancements: essential meta tags and a programmatically generated `sitemap.xml` and `robots.txt`.
+- Auto-generated favicon link tags from a single source image.
 - Global configuration files (pre-commit/checkout hooks, line ending normalization, linters).
 - VS Code workspace settings and recommended extensions.
 
