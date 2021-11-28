@@ -1,6 +1,6 @@
 {
-  "name": "11ty-starter-sass-optimized-images",
-  "description": "An 11ty starter with basic project scaffolding, Sass, and image optimization.",
+  "name": "11ty-sass-images-seo",
+  "description": "An 11ty starter with project scaffolding, Sass, image optimization, and SEO enhancements.",
   "version": "0.0.1",
   "license": "MIT",
   "author": "AleksandrHovhannisyan",
