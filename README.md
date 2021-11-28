@@ -60,7 +60,7 @@ The following tasks are **required**:
 - [ ] The [11ty directory config](./11ty/constants/dir.js).
 - [ ] The template format and engine in [`.eleventy.js`](./.eleventy.js).
 - [ ] The [image shortcode](./11ty/shortcodes/image.js).
-- [ ] Any [ESLint](./.eslintrc.json), [Prettier](./.prettierrc), or [Stylelint](./.stylelintrc.json) configs.
+- [ ] Any [ESLint](./.eslintrc.json), [Prettier](./.prettierrc), or [Stylelint](./.stylelintrc.json) linter rules.
 - [ ] Any filters, like the custom slugify function.
 - [ ] Your project's [media query breakpoints](./src/assets/styles/partials/_breakpoints.scss).
 - [ ] The browserslist config in [`package.json`](./package.json), for client-side bundlers.

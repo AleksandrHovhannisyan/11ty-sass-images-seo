@@ -9,7 +9,6 @@
 // Breakpoint mixins
 @mixin mobile {
   $bp: map.get($media-breakpoints, mobile);
-
   @media screen and (min-width: $bp) {
     @content;
   }
@@ -17,7 +16,6 @@
 
 @mixin mobile-lg {
   $bp: map.get($media-breakpoints, mobile-lg);
-
   @media screen and (min-width: $bp) {
     @content;
   }
@@ -25,7 +23,6 @@
 
 @mixin tablet-sm {
   $bp: map.get($media-breakpoints, tablet-sm);
-
   @media screen and (min-width: $bp) {
     @content;
   }
@@ -33,7 +30,6 @@
 
 @mixin tablet {
   $bp: map.get($media-breakpoints, tablet);
-
   @media screen and (min-width: $bp) {
     @content;
   }
@@ -41,7 +37,6 @@
 
 @mixin desktop {
   $bp: map.get($media-breakpoints, desktop);
-
   @media screen and (min-width: $bp) {
     @content;
   }
@@ -49,7 +44,6 @@
 
 @mixin desktop-lg {
   $bp: map.get($media-breakpoints, desktop-lg);
-
   @media screen and (min-width: $bp) {
     @content;
   }
