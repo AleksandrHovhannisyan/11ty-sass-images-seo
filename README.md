@@ -26,6 +26,7 @@ Most of this template serves as the foundation for [my personal website](https:/
 ## Table of Contents
 
 <!-- no toc -->
+- [Installation](#installation)
 - [Checklist](#checklist)
 - [Project Structure](#project-structure)
   - [`src`](#src)
@@ -36,6 +37,16 @@ Most of this template serves as the foundation for [my personal website](https:/
 - [CSS (Sass)](#css-sass)
 - [Editor Settings](#editor-settings)
 - [Linting](#linting)
+
+## Installation
+
+1. Click the `Use this template` button.
+
+![The header for this repo, showing various tabs and action buttons. The green Use this template button has a red focus ring around it.](https://user-images.githubusercontent.com/19352442/143769374-87b9ec66-f95f-439e-a7b4-a9f6e02a0e9d.png)
+
+2. Install dependencies with `yarn` (if you prefer another package manager, delete `yarn.lock`).
+
+3. Follow [the checklist](#checklist).
 
 ## Checklist
 
