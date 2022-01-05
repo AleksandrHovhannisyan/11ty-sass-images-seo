@@ -39,9 +39,6 @@
     "stylelint": "^14.1.0",
     "stylelint-config-standard-scss": "^3.0.0"
   },
-  "browserslist": [
-    "defaults and supports es6-module and not IE <= 11"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
