@@ -1,4 +1,3 @@
-const dayjs = require('dayjs');
 const { default: slugify } = require('slugify');
 const site = require('../../src/_data/site');
 
@@ -22,7 +21,7 @@ const toAbsoluteUrl = (url) => {
 };
 
 /** Converts the given date string to ISO8610 format. */
-const toISOString = (dateString) => dayjs(dateString).toISOString();
+const toISOString = (dateString) => new Date(dateString).toISOString();
 
 module.exports = {
   slugifyString,

@@ -1,7 +1,7 @@
 {
   "name": "11ty-sass-images-seo",
   "description": "An 11ty starter with project scaffolding, Sass, image optimization, and SEO enhancements.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "AleksandrHovhannisyan",
   "scripts": {
@@ -25,7 +25,6 @@
     "@11ty/eleventy-img": "^1.0.0",
     "@11ty/eleventy-upgrade-help": "^1.0.1",
     "cross-env": "^7.0.3",
-    "dayjs": "^1.10.7",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
