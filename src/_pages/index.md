@@ -26,3 +26,9 @@ This starter template does not:
 - Get in your way.
 
 Most of this template serves as the foundation for [my personal website](https://github.com/AleksandrHovhannisyan/aleksandrhovhannisyan.com).
+
+## Images
+
+Below is an example of a fully optimized and responsive image. Remote and local images are supported out of the box.
+
+{% image 'https://images.unsplash.com/photo-1591160690555-5debfba289f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80' 'A golden retriever puppy lies obediently on its front paws and looks at the camera.' %}
