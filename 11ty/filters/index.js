@@ -10,14 +10,9 @@ const slugifyString = (str) => {
   });
 };
 
-/** Formats the given string as an absolute url. */
+/** Formats the given url as an absolute url. */
 const toAbsoluteUrl = (url) => {
-  // Replace trailing slash, e.g., site.com/ => site.com
-  const siteUrl = site.url.replace(/\/$/, '');
-  // Replace starting slash, e.g., /path/ => path/
-  const relativeUrl = url.replace(/^\//, '');
-
-  return `${siteUrl}/${relativeUrl}`;
+  return new URL(url, site.url).href;
 };
 
 /** Converts the given date string to ISO8610 format. */
