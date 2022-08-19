@@ -6,9 +6,8 @@ stylesheets:
 {%- if page.url == "/" -%}
   {%- assign pageTitle = site.title -%}
 {%- else -%}
-  {%- assign pageTitle = title | default: renderData.title -%}
-  {%- assign pipe = " | " -%}
-  {%- assign pageTitle = pageTitle | append: pipe | append: site.title -%}
+  {%- comment -%}You could also use any other pipe character you want, like a hyphen or en/em dash{%- endcomment -%}
+  {%- assign pageTitle = title | default: renderData.title | append: " | " | append: site.title -%}
 {%- endif -%}
 {%- assign description = description | default: site.description -%}
 {%- assign keywords = keywords | default: site.keywords -%}
@@ -35,25 +34,37 @@ stylesheets:
   {%- for href in stylesheets -%}
     <link rel="stylesheet" href="{{ href }}">
   {%- endfor -%}
-  {%- comment -%}Open Graph social media previews{%- endcomment -%}
-  <meta property="og:title" content="{{ pageTitle }}">
-  {%- if thumbnail -%}
-    <meta property="og:image" content="{{ thumbnail }}">
-  {%- endif -%}
-  <meta property="og:description" content="{{ description }}">
-  <meta property="og:url" content="{{ page.url | toAbsoluteUrl }}">
-  {%- comment -%}Twitter card meta tags{%- endcomment -%}
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{{ pageTitle }}">
-  <meta name="twitter:description" content="{{ description }}">
-  {%- if thumbnail -%}
-    <meta name="twitter:image" content="{{ thumbnail }}">
-  {%- endif -%}
+  {%- comment -%}Template-specific module scripts, deferred by default{%- endcomment -%}
+  {%- for script in scripts -%}
+    <script type="module" src="{{ script }}"></script>
+  {%- endfor -%}
   {%- comment -%}Favicons{%- endcomment -%}
   {% favicon 'src/assets/images/favicon/favicon.png' %}
+  {%- comment -%}Open Graph meta tags{%- endcomment -%}
+  <meta property="og:title" content="{{ openGraph.title | default: pageTitle }}">
+  {%- if openGraph.image -%}
+    <meta property="og:image" content="{{ openGraph.image }}">
+  {%- endif -%}
+  <meta property="og:description" content="{{ openGraph.description | default: description }}">
+  <meta property="og:url" content="{{ page.url | toAbsoluteUrl }}">
+  <meta property="og:type" content="{{ openGraph.type | default: "website" }}">
+  <meta property="og:locale" content="{{ site.language | replace: "-", "_" }}">
+  {%- comment -%}Twitter card meta tags{%- endcomment -%}
+  <meta name="twitter:card" content="{{ openGraph.twitter.card | default: "summary" }}">
+  <meta name="twitter:title" content="{{ openGraph.title | default: pageTitle }}">
+  <meta name="twitter:description" content="{{ openGraph.description | default: description }}">
+  {%- if openGraph.image -%}
+    <meta name="twitter:image" content="{{ openGraph.image }}">
+  {%- endif -%}
+  {%- comment -%}Preload optimizations{%- endcomment -%}
+  {%- if preloads -%}
+  {% for preload in preloads %}
+    <link rel="preload" as="{{ preload.as }}" type="{{ preload.type }}" href="{{ preload.href }}" {% if preload.crossorigin %}crossorigin{% endif %}>
+  {%- endfor -%}
+  {% endif %}
 </head>
 <body>
-  {%- comment -%}Add common layout components here (e.g., site nav/footer){%- endcomment -%}
+  {%- comment -%}You can add common layout components here if you want (e.g., site nav/footer){%- endcomment -%}
   {{ content }}
 </body>
 </html>
