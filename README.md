@@ -63,7 +63,7 @@ The following tasks are **required**:
 - [ ] The [image shortcode](./11ty/shortcodes/image.js).
 - [ ] Any [ESLint](./.eslintrc.json), [Prettier](./.prettierrc), or [Stylelint](./.stylelintrc.json) linter rules.
 - [ ] Any filters, like the custom slugify function.
-- [ ] Your project's [media query breakpoints](./src/assets/styles/partials/_breakpoints.scss).
+- [ ] Your project's [style tokens, such as media query breakpoints](./src/assets/styles/_tokens.scss).
 - [ ] The browserslist config in [`package.json`](./package.json), for client-side bundlers.
 
 ## Project Structure
