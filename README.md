@@ -1,6 +1,6 @@
 # 11ty-sass-images-seo
 
-> The four ingredients to an awesome static site.
+> **Note**: While this starter is MIT licensed, **please feel free to license your website differently**. The only situation where I'd ask you preserve the MIT license is if you want to create a variation/spinoff of the starter _itself_.
 
 This is an opinionated starter for [11ty](https://github.com/11ty/eleventy) that includes:
 
