@@ -21,9 +21,9 @@
     "lint:js:fix": "eslint --cache --fix \"**/*.js\""
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
-    "@11ty/eleventy-img": "^2.0.1",
-    "@11ty/eleventy-upgrade-help": "^1.0.1",
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^3.1.8",
+    "@11ty/eleventy-upgrade-help": "^2.0.5",
     "cross-env": "^7.0.3",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
