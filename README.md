@@ -86,7 +86,7 @@ Eleventy-specific configurations for filters, collections, general utilities, et
 
 ## Image Optimization
 
-This starter includes basic image optimization using the official [`@11ty/eleventy-img`](https://github.com/11ty/eleventy-img) plugin. The image shortcode can be invoked with a source-relative path to your target image and any other arguments you want to supply. See [`./11ty/shortcodes/image.js`](./11ty/shortcodes/image.js).
+This starter includes basic image optimization using the official [`@11ty/eleventy-img`](https://github.com/11ty/eleventy-img) plugin. The image shortcode can be invoked with a source-relative path to your target image and any other arguments you want to supply. See [`./11ty/shortcodes/image.js`](./11ty/shortcodes/image.js). **Note**: You will likely need to change the default image widths/dimensions used by this shortcode to match your needs.
 
 For a more advanced setup, see my tutorial on [lazily loading images in Eleventy](https://www.aleksandrhovhannisyan.com/blog/eleventy-image-lazy-loading/).
 
