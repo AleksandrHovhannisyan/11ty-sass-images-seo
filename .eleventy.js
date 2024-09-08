@@ -1,17 +1,35 @@
-const { toISOString, toAbsoluteUrl } = require("./11ty/filters");
-const dir = require("./11ty/constants/dir");
-const imageShortcode = require("./11ty/shortcodes/image");
-const faviconShortcode = require("./11ty/shortcodes/favicon");
+import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
+import { toISOString, toAbsoluteUrl } from "./lib/filters.js";
+import { dir } from './lib/constants.js';
+import faviconShortcode from './lib/shortcodes/favicon.js';
 
 // Template language for the site: https://www.11ty.dev/docs/languages/liquid/
 const TEMPLATE_ENGINE = 'liquid';
 
-module.exports = (eleventyConfig) => {
+/**
+ * @type {(eleventyConfig: import('@11ty/eleventy/src/UserConfig')) => ReturnType<import('@11ty/eleventy/src/defaultConfig')>}
+ */
+export default (eleventyConfig) => {
   // Watch targets
   eleventyConfig.addWatchTarget(`${dir.input}/assets/styles`);
 
+  // Plugins
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    // which file extensions to process
+    extensions: 'html',
+    // optional, output image formats
+    formats: ['jpg', 'webp'],
+    // optional, output image widths
+    widths: ['auto', 400, 800],
+    // optional, attributes assigned on <img> override these values.
+    defaultAttributes: {
+      loading: 'lazy',
+      sizes: '100vw',
+      decoding: 'async',
+    },
+  });
+
   // Custom shortcodes
-  eleventyConfig.addShortcode('image', imageShortcode);
   eleventyConfig.addShortcode('favicon', faviconShortcode);
 
   // Custom filters

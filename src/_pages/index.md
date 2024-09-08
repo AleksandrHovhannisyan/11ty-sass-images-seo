@@ -27,8 +27,14 @@ This starter template does not:
 
 Most of this template serves as the foundation for [my personal website](https://github.com/AleksandrHovhannisyan/aleksandrhovhannisyan.com).
 
+## Posts
+
+{% for post in collections.post %}
+- [{{ post.data.title }}]({{ post.url }})
+{% endfor %}
+
 ## Images
 
-Below is an example of a fully optimized and responsive image. Remote and local images are supported out of the box.
+Below is an example of a fully optimized and responsive image. Remote and local images are supported out of the box. Resize the browser window and inspect your network tab to see the different widths get requested as the device width changes.
 
-{% image 'https://images.unsplash.com/photo-1591160690555-5debfba289f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80' 'A golden retriever puppy lies obediently on its front paws and looks at the camera.' %}
+![An orange cat with its head tilted looking at the camera.](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1024px-Cat03.jpg)

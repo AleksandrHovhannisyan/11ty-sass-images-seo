@@ -1,11 +1,12 @@
 {
   "name": "11ty-sass-images-seo",
   "description": "An 11ty starter with project scaffolding, Sass, image optimization, and SEO enhancements.",
-  "version": "0.0.2",
-  "license": "MIT",
-  "author": "AleksandrHovhannisyan",
+  "version": "1.0.0",
+  "license": "MIT (TODO: replace me)",
+  "author": "AleksandrHovhannisyan (TODO: replace me)",
+  "type": "module",
   "scripts": {
-    "clean": "rimraf _site",
+    "clean": "rimraf _site .cache",
     "debug:html": "cross-env DEBUG=Eleventy* ELEVENTY_ENV=development npx @11ty/eleventy --serve --incremental --port=8080",
     "serve": "npm-run-all --parallel serve:*",
     "serve:html": "cross-env ELEVENTY_ENV=development npx @11ty/eleventy --serve --incremental --port=8080",
@@ -14,16 +15,12 @@
     "build:html": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy",
     "build:css": "sass src/assets/styles:_site/assets/styles --style=compressed",
     "lint": "npm-run-all lint:*",
-    "lint:fix": "npm-run-all --parallel lint:*:fix",
-    "lint:css": "stylelint \"src/**/*.scss\"",
-    "lint:css:fix": "stylelint --fix \"src/**/*.scss\"",
-    "lint:js": "eslint --cache \"**/*.js\"",
-    "lint:js:fix": "eslint --cache --fix \"**/*.js\""
+    "lint:css": "stylelint --fix \"src/**/*.scss\"",
+    "lint:js": "eslint --cache --fix \"**/*.js\""
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-img": "^3.1.8",
-    "@11ty/eleventy-upgrade-help": "^2.0.5",
+    "@11ty/eleventy": "3.0.0-beta.1",
+    "@11ty/eleventy-img": "5.0.0-beta.10",
     "cross-env": "^7.0.3",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
@@ -32,20 +29,26 @@
     "lint-staged": "^10.4.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
-    "rimraf": "^3.0.2",
-    "sass": "^1.69.7",
+    "rimraf": "^6.0.1",
+    "sass": "^1.69.5",
     "slugify": "^1.6.5",
     "stylelint": "^14.10.0",
     "stylelint-config-standard-scss": "^5.0.0"
   },
+  "browserslist": [
+    "last 2 chrome versions",
+    "last 3 safari versions",
+    "last 2 firefox versions",
+    "last 2 edge versions"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "post-checkout": "yarn"
+      "post-checkout": "npm install"
     }
   },
   "lint-staged": {
-    "*.js": "yarn run lint:js:fix",
-    "*.scss": "yarn run lint:css:fix"
+    "*.js": "npm run lint:js:fix",
+    "*.scss": "npm run lint:css:fix"
   }
 }

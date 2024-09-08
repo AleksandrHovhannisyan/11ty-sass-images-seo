@@ -1,12 +1,13 @@
 # 11ty-sass-images-seo
 
-> **Note**: While this starter is MIT licensed, **please feel free to license your website differently**. The only situation where I'd ask you preserve the MIT license is if you want to create a variation/spinoff of the starter _itself_.
+> [!NOTE]
+> While this starter is MIT licensed, **please feel free to license your website differently**. The only situation where I'd ask you preserve the MIT license is if you want to create a variation/spinoff of the starter _itself_.
 
 This is an opinionated starter for [11ty](https://github.com/11ty/eleventy) that includes:
 
 - Pre-configured 11ty directories (input, output, data, includes, layouts) and custom filters.
 - A separate directory for 11ty-specific configs: filters, shortcodes, etc.
-- Basic image optimization using the official [`@11ty/eleventy-img`](https://github.com/11ty/eleventy-img) plugin.
+- Basic image optimization using the official [`@11ty/eleventy-img`](https://github.com/11ty/eleventy-img) transform plugin.
 - Sass compilation, including partials for breakpoints, mixins, functions, and CSS resets.
 - Basic SEO enhancements: essential meta tags and a programmatically generated `sitemap.xml` and `robots.txt`.
 - Auto-generated favicon link tags from a single source image.
@@ -44,7 +45,7 @@ Most of this template serves as the foundation for [my personal website](https:/
 
 ![The header for this repo, showing various tabs and action buttons. The green Use this template button has a red focus ring around it.](https://user-images.githubusercontent.com/19352442/143769374-87b9ec66-f95f-439e-a7b4-a9f6e02a0e9d.png)
 
-2. Install dependencies with `yarn` (if you prefer another package manager, delete `yarn.lock`).
+2. Install dependencies using your package manager of choice.
 
 3. Follow [the checklist](#checklist).
 
@@ -52,15 +53,15 @@ Most of this template serves as the foundation for [my personal website](https:/
 
 The following tasks are **required**:
 
-- [ ] Fill out [`src/_data/site.js`](./src/_data/site.js) with your site's metadata and URL.
-- [ ] Update [`package.json`](./package.json) with your site's info.
+- [ ] Fill out [`src/_data/site.js`](./src/_data/site.js) with your site's metadata and production URL.
+- [ ] Update [`package.json`](./package.json) with your site's info (see `TODO:`s).
 - [ ] Replace the favicon in [`src/assets/images/favicon`](./src/assets/images/favicon/) with your site's favicon.
 
 **Optionally**, you may also want to customize:
 
-- [ ] The [11ty directory config](./11ty/constants/dir.js).
+- [ ] The [11ty directory config](./lib/constants/dir.js).
 - [ ] The template format and engine in [`.eleventy.js`](./.eleventy.js).
-- [ ] The [image shortcode](./11ty/shortcodes/image.js).
+- [ ] The [image transform options](./.eleventy.js).
 - [ ] Any [ESLint](./.eslintrc.json), [Prettier](./.prettierrc), or [Stylelint](./.stylelintrc.json) linter rules.
 - [ ] Any filters, like the custom slugify function.
 - [ ] Your project's [style tokens, such as media query breakpoints](./src/assets/styles/_tokens.scss).
@@ -80,15 +81,24 @@ The following tasks are **required**:
 - `robots.liquid`: writes a `robots.txt` to your site.
 - `sitemap.liquid`: creates a basic sitemap for your site.
 
-### `11ty`
+### `lib`
 
 Eleventy-specific configurations for filters, collections, general utilities, etc. Import these into your `.eleventy.js` to configure Eleventy. You are encouraged to write tests for any core utilities (e.g., filters).
 
 ## Image Optimization
 
-This starter includes basic image optimization using the official [`@11ty/eleventy-img`](https://github.com/11ty/eleventy-img) plugin. The image shortcode can be invoked with a source-relative path to your target image and any other arguments you want to supply. See [`./11ty/shortcodes/image.js`](./11ty/shortcodes/image.js). **Note**: You will likely need to change the default image widths/dimensions used by this shortcode to match your needs.
+This starter includes basic image optimization using the official [`@11ty/eleventy-img`](https://github.com/11ty/eleventy-img) plugin, specifically the image transform plugin. This automatically optimizes and reformats images on any HTML page, including HTML generated from Markdown content. This means that you can do this in your blog posts:
 
-For a more advanced setup, see my tutorial on [lazily loading images in Eleventy](https://www.aleksandrhovhannisyan.com/blog/eleventy-image-lazy-loading/).
+```md
+![alt text](./path/to/local/image.jpeg)
+```
+
+And Eleventy will replace the image with an optimized one in production.
+
+As an optimization for local development, Eleventy will only optimize images as they are requested by your browser.
+
+> [!NOTE]
+> You will likely need to change the default image widths and formats used by this plugin to match your needs. See [`.eleventy.js`](./.eleventy.js).
 
 ## `package.json` Scripts
 
@@ -96,8 +106,7 @@ For a more advanced setup, see my tutorial on [lazily loading images in Eleventy
 - `debug:html`: starts 11ty in debug mode.
 - `serve`: serves the site's HTML and CSS in development mode.
 - `build`: builds the site's HTML and CSS for production.
-- `lint`: runs all linters to detect any issues.
-- `lint:fix`: runs all linters and auto-fixes any issues (if possible).
+- `lint`: runs all linters to detect and fix any issues.
 
 ## Custom Front Matter
 
